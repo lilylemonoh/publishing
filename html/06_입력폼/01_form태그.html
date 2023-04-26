@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang='ko'>
+    <head>
+        <meta charset='UTF-8'>
+        <title>Document</title>
+    </head>
+    <body>
+        <form action="https://search.naver.com/search.naver" method="GET">
+            <!--forㅡ태그만으로는 아무것도 입력받지 못하고
+            input 등의 태그가 필요합니다.-->
+            <input type="text" name="query">
+            <!--name은 어떤 변수를 의미한다. "text"의 내용을 
+            "query=text" 형식으로 담아서 action 주소에 보냄-->
+            <input type="text" name="quer">
+            <button>검색</button>
+            <!--?로 목적지 주소와 input 이후를 구분을 하고, 
+            그 이후 내용은 &로 구분을 한다.
+            2개 input을 넣으면 
+            query=세계펭귄의날&quer=젠투펭귄-->
+            <!--POST는 주소에 안붙이고 보내는 방식
+            (예: 아이디 비밀번호처럼 드러나면 안될 때)-->
+        </form>
+    </body>
+</html>
