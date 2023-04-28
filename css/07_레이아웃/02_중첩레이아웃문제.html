@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang='ko'>
+    <head>
+        <meta charset='UTF-8'>
+        <title>Document</title>
+        <style>
+            /*해결책 3 : after를 이용한 빈 가상 선택자를 만들고
+            block 형태로 화면에 출력하고,
+            생긴 가상태그에 clear:both 적용*/
+            .container1::after {
+                content : '';
+                display:block;
+                clear:both;
+            }
+
+            .container1{
+                border: 3px solid red;
+                width:700px;
+                padding:20px;
+                /*해결책 2: 부모요소에 overflow:hidden 적용 
+                overflow:hidden;*/
+                
+            }
+            .box{
+                width:200px;
+                height: 100px;
+                border:3px solid green;
+                background-color: yellowgreen;
+                border-radius: 0px;
+                float:left;
+            }
+            /*해결책 1. vbox에 clear:both를 걸어서 해제
+            (빈 형제 요소를 추가하여 clear 속성 적용)
+            .vbox{
+                clear:both;
+            } */
+        </style>
+    </head>
+    <body>
+        <div class="container1"> 
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="vbox"></div> <!--용도는 없으나 float 해제 목적으로 사용-->
+
+            <!--float 가장 간단한 깨는 법은 다음 태그에 clear both를 하는 것
+            1~3의 해결책이 있음 -->
+        </div>
+    </body>
+</html>
